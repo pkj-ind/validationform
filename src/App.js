@@ -1,9 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ValForm from './ValForm'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 function App() {
   return (
+    <>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -19,7 +22,14 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+      </div>
+      
+      {console.log("print localtion",window.location.pathname)}
+      
+    <Router>
+    <Route  path='/valform' component={ValForm} />
+    </Router>
+    </>
   );
 }
 
