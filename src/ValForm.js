@@ -1,5 +1,6 @@
 import React,{useState, Fragment} from 'react'
 import validator from 'validator'
+import { Redirect } from 'react-router-dom'
 
 const ValForm = () => {
    const [formData,setFormData]=useState({
@@ -44,7 +45,8 @@ const ValForm = () => {
 
         if(!validator.isEmpty(pinCode) && !validator.isEmpty(aadhar) 
         && zipError === "" && aadharError === ""){
-            alert("Form is good to submit.")
+        // return  <Redirect to='/displaydata' />
+        window.location.href="/displaydata";
         }
     }
     

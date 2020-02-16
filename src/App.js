@@ -2,11 +2,13 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ValForm from './ValForm'
+import Displaydata from './Displaydata'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 function App() {
   return (
     <>
+    
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -28,6 +30,7 @@ function App() {
       
     <Router>
     <Route  path='/valform' component={ValForm} />
+    <Route exact path='/displaydata' component={Displaydata} />
     </Router>
     </>
   );
