@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import ValForm from './ValForm'
 import Displaydata from './Displaydata'
+import Register from './Register'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
     <Router>
     <Route  path='/valform' component={ValForm} />
     <Route exact path='/displaydata' component={Displaydata} />
+    <Route exact path='/register' component={Register} />
     </Router>
     </>
   );
