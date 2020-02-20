@@ -55,7 +55,21 @@ export const Register = () => {
         console.log("Typed password" , password)
         console.log("Password validator is empty",validator.isEmpty(password))
           if(validator.isEmpty(password)){
-              setFormError(prevState=>{return{...prevState,passwordError:"Please create your password."}} )   
+              setFormError(prevState=>{
+                  return{...prevState,passwordError:"Please create your password."}} )   
+            }
+          else if(password.toLowerCase() === "password"){
+                setFormError(prevState=>{
+                    return{...prevState,passwordError:'You can not use the word "password".'}} )   
+            }
+          else if(password === userName){
+                setFormError(prevState=>{
+                    return{...prevState,passwordError:"You should not use username as your password."}} )   
+            }
+          else if(!password.match(/^[A-Za-z0-9_@./#&+-]*$/)){
+                setFormError(prevState=>{
+                    return{...prevState,passwordError:
+                        "Please use alpha numneric and only following special char _@./#&+- with no space"}} )   
             }
   
       }
