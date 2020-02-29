@@ -4,6 +4,7 @@ import './App.css';
 import ValForm from './ValForm'
 import Displaydata from './Displaydata'
 import Register from './Register'
+import CallModal from './CallModal'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
     <Route  path='/valform' component={ValForm} />
     <Route exact path='/displaydata' component={Displaydata} />
     <Route exact path='/register' component={Register} />
+    <Route exact path='/callmodal' component={CallModal} />
     </Router>
     </>
   );
