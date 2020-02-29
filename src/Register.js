@@ -103,12 +103,12 @@ export const Register = () => {
       // !password.match(/^[A-Za-z0-9_@./#&+-]*$/)
       //password.match(/^[A-Za-z]*$/) || !password.match(/^[-@.\/#&+\w\s]*$/)
 
-      !password.match(/^[A-Za-z0-9!@#$%\^&_.]*$/) ||
+      !password.match(/^[A-Za-z0-9!@#$%^&_.]*$/) ||
       password.match(/^[A-Za-z]*$/) || // not allowing only alphabets
       password.match(/^[0-9]*$/) ||  // not allowing only digits
       password.match(/^[A-Za-z0-9]*$/) || // not allowing alpha numeric
       //  password.match(/^[0-9!@#$%\^&_.]*$/) || //not allowing number and spcl charc
-      password.match(/^[A-Za-z!@#$%\^&_.]*$/) // not allowing only alphabet and few listed spcl char
+      password.match(/^[A-Za-z!@#$%^&_.]*$/) // not allowing only alphabet and few listed spcl char
 
     ) {
       setFormError(prevState => {
@@ -119,7 +119,7 @@ export const Register = () => {
       })
     }
 
-    { password.match(/^[A-Za-z]*$/) ? console.log("only alphabet") : console.log(" Not only alphabet") }
+   // { password.match(/^[A-Za-z]*$/) ? console.log("only alphabet") : console.log(" Not only alphabet") }
 
   }
 
