@@ -12,12 +12,16 @@ const Modal = ({ handleClose, show }) => {
       handleClose()
     }
   }
+
+  show && document.getElementById('modal_holder').setAttribute('tabindex', '0');
   return (
     <div className={show ? "modal display-block" : "modal display-none"} 
     role="dialog" id="modal_window"
     aria-labelledby="modal_title">
       <section className="modal-main"
-        ref={cardModal} onKeyDown={(e) => onKeyPressed(e)} >
+        ref={cardModal} 
+        onKeyDown={(e) => onKeyPressed(e)} 
+        id="modal_holder" >
         <button type="button"
           class="btn-close"
           id="modal_close"
