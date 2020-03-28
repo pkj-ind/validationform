@@ -1,9 +1,9 @@
-import React, { useRef } from 'react'
+import React from 'react'
 
 const Modal = ({ handleClose, show }) => {
-  //  const showHideClassName = show ? "modal display-block" : "modal display-none";
-  const cardModal = useRef(null)
-  show && cardModal.current.focus()
+  
+
+
 
   function onKeyPressed(e) {
     console.log(e.key);
@@ -13,20 +13,17 @@ const Modal = ({ handleClose, show }) => {
     }
   }
 
-  show && document.getElementById('modal_holder').setAttribute('tabindex', '0');
+ // show && document.getElementById('modal_holder').setAttribute('tabindex', '0');
   return (
     <div className={show ? "modal display-block" : "modal display-none"} 
     role="dialog" id="modal_window"
     aria-labelledby="modal_title">
-      <section className="modal-main"
-        ref={cardModal} 
-        onKeyDown={(e) => onKeyPressed(e)} 
-        id="modal_holder" >
-        <button type="button"
-          class="btn-close"
-          id="modal_close"
+      <section className="modal-main" 
+        onKeyDown={(e) => onKeyPressed(e)}>
+        <button
+          className="btn-close"
           aria-label="close"
-          onClick={handleClose}
+          onClick={() => handleClose()}
           >
           X
           </button>
@@ -34,7 +31,7 @@ const Modal = ({ handleClose, show }) => {
           <div id="full_description" className="description" aria-describedby="full_description">
             <p>Description goes here.</p>
           </div>
-        <button onClick={handleClose} className="mdl_btn btn">close</button>
+        <button onClick={handleClose} className="mdl_btn btn"  >close</button>
 
       </section>
     </div>

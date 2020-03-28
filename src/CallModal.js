@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 //import ReactDOM from "react-dom";
-import Modal from './Modal'
+//import Modal from './Modal'
+import A11yModal from "./A11yModal"
 
 class CallModal extends Component {
 
@@ -19,7 +20,7 @@ class CallModal extends Component {
   };
 
   hideModal = () => {
-    console.log("inside hidemodal", this.state.lastFocus)
+    console.log("inside hidemodal function", this.state.lastFocus)
     this.setState({ show: false });
     this.state.lastFocus.focus();
   };
@@ -31,10 +32,11 @@ class CallModal extends Component {
     return (
       <main>
         <h1 className="prisha">React Modal</h1>
-        <Modal show={this.state.show} handleClose={this.hideModal} />
+    { this.state.show && <A11yModal handleClose={this.hideModal} /> }
         <button type="button" onClick={this.showModal}>
           open
           </button>
+         
       </main>
     );
   }
