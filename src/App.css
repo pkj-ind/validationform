@@ -104,3 +104,11 @@
   margin: 16px 40px ;
   font-size: 16px;
 }
+
+.modal_txt_box{
+  margin: 16px 40px ;
+  font-size: 12px;
+  line-height: 1.25em;
+  border-width: 1px;
+  border-color: black;
+}
