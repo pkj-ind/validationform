@@ -1,4 +1,4 @@
-import React,{useState, Fragment} from 'react'
+import React,{useState, Fragment, useEffect} from 'react'
 import validator from 'validator'
 import { Redirect } from 'react-router-dom'
 
@@ -13,6 +13,19 @@ const ValForm = () => {
     })
     const {pinCode,aadhar}=formData;
     const {zipError,aadharError}=formError;
+
+    useEffect(() => {
+
+        if (window.performance) {
+            if (performance.navigation.type === 1) {
+              console.log( "stay on the same page" );
+              window.location.href="/valform"
+            } else {
+              alert( "This page is not reloaded");
+            }
+          }
+        
+    }, [])
 
     const onZipChange = e => {
 
@@ -68,7 +81,8 @@ const ValForm = () => {
 
     }
     return (
-        <Fragment>
+        <Fragment  >
+            <div>
             <h1>Please make sure it's you only:</h1>
         <form onSubmit={e=>onSubmit(e)}> 
           <label>PinCode:</label>
@@ -97,7 +111,7 @@ const ValForm = () => {
           <br/>
           <button type="submit">Submit</button>
         </form>
-
+        </div>
         </Fragment>
     )
 }
